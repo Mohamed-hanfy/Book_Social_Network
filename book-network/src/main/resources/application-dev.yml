@@ -40,6 +40,13 @@ spring:
       jwt:
         secret-Key: 7d5211e4060dad6330c90b91369127d2142510fa849739c52bfabc58f42a167a1596bccf68f9d3dfd3855b058bff236cde428f3974ebf32bac6846d66281ed7563e2600533b2b4a07770af57742311dac5901271d534116d90d3276011c349c23ebad96c01bf320b66f5624f7d56026633fe614c9483c48ef3d66e1ac2e50d87a64f275e3400bf7af7c4d38ea009e1cace71d57e99c88473d3e21762b910bdaa44ed96f69c4c2e2b87b1deb707d58946d6b53a7729e0e25b3fa59dcb49c0eec153247d2e10067867befbeb0a5d2017b1625bfba4a07e90e77f3bacb4ae9a8f3798c4e838e9591088eacb3c56457e73cfee8af76f2de1d707b6ee3a761dfbf7a9
         expiration: 8640000
+      mailing:
+        frontend:
+          activation-url: http://localhost:42000/activate_account
+    file:
+      upload:
+        photos-output-path: ./uploads
+
 
 logging:
   level:

@@ -1,4 +1,9 @@
 package com.mohamed.book_network.exception;
 
-public class OperationNotPermittedException {
+public class OperationNotPermittedException extends RuntimeException {
+    public OperationNotPermittedException(String msg) {
+        super(msg);
+
+    }
+
 }
