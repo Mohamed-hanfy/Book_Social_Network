@@ -87,16 +87,9 @@ git clone https://github.com/Mohamed-hanfy/Book_Social_Network.git
 cd Book_Social_Network
 ```
 
-2. Configure database settings in `application.yml`:
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/book_social_network
-    username: your_username
-    password: your_password
-```
+2. Configure database settings in `application-dev.yml`
 
-3. Start the database:
+3. Start the docker:
 ```bash
 docker-compose up -d
 ```
