@@ -3,7 +3,6 @@ package com.mohamed.book_network.history;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
@@ -27,7 +26,7 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             select (count(*) >0) As isBorrowed from BookTransactionHistory history
             where history.user.id=:userId and history.book.id=:bookId and  history.returnApproved=false 
             """)
-    boolean isAlreadyBorrowedByUser(Integer bookId, Integer id);
+    boolean isAlreadyBorrowedByUser(Integer bookId, Integer userId);
 
     @Query("""
             select  transaction
@@ -37,7 +36,7 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             transaction.returned=false and
              transaction.returnApproved=false 
             """)
-    Optional<BookTransactionHistory> findByBookIdAndUserId(Integer bookId, Integer id);
+    Optional<BookTransactionHistory> findByBookIdAndUserId(Integer bookId, Integer userId);
 
     @Query("""
             select  transaction
@@ -47,5 +46,5 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
             transaction.returned=true and
              transaction.returnApproved=false 
             """)
-    Optional<BookTransactionHistory> findByBookIdAndOwnerId(Integer bookId, Integer id);
+    Optional<BookTransactionHistory> findByBookIdAndOwnerId(Integer bookId, Integer userId);
 }

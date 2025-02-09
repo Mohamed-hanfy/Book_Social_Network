@@ -48,7 +48,7 @@ public class BookService {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdDate").descending());
 
-        Page<Book> books = bookRepository.findAllDisplayableBooks(pageable, user.getId());
+        Page<Book> books = bookRepository.findAllDisplayableBooks(pageable, user.getName());
 
         List<BookResponse> bookResponses = books.stream().map(bookMapper::toBookResponse).toList();
 
@@ -68,7 +68,7 @@ public class BookService {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdDate").descending());
 
-        Page<Book> books = bookRepository.findAll(BookSpecification.withOwnerId(user.getId()), pageable);
+        Page<Book> books = bookRepository.findAllDisplayableBooks(pageable,connectedUser.getName());
 
         List<BookResponse> bookResponses = books.stream().map(bookMapper::toBookResponse).toList();
         return new PageResponse<>(
