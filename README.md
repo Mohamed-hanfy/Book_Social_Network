@@ -76,8 +76,8 @@ book-network/
 ### Prerequisites
 - Java 17+
 - Maven
-- PostgreSQL/MySQL
-- Docker (optional)
+- MySQL
+- Docker
 
 ### Installation
 
