@@ -47,7 +47,6 @@ spring:
       upload:
         photos-output-path: ./uploads
 
-
 logging:
   level:
     org.hibernate.SQL: DEBUG

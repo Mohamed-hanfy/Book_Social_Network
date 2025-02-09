@@ -5,7 +5,12 @@ spring:
     multipart:
       max-file-size: 50MB
 springdoc:
-  default-produces-media-type: application/json
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
 server:
   servlet:
     context-path: /api/v1/

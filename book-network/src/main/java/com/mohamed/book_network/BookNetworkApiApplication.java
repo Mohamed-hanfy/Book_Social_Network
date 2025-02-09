@@ -2,6 +2,7 @@ package com.mohamed.book_network;
 
 import com.mohamed.book_network.role.Role;
 import com.mohamed.book_network.role.RoleRepository;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
 @EnableAsync
+
 public class BookNetworkApiApplication {
 
 	public static void main(String[] args) {
